@@ -1,25 +1,36 @@
-
 const initailState = {
   dob: "",
-  age:''
+  age: "",
+  category: "",
 };
 
 export default (state = initailState, action) => {
   switch (action.type) {
-    case 'CALCULATE_AGE': {
-      var dob = action.dob;
-       dob = new Date(dob)
-      var month_diff = Date.now() - dob.getTime();
-      var age_dt = new Date(month_diff);
-      var year = age_dt.getUTCFullYear();
-      var age = Math.abs(year - 1970);
-      console.log("age is");
+    case "CALCULATE_AGE": {
+      var dob = action.dob.dob;
+      var userDob = Date.parse(dob);
+      var currentDate = Date.now();
+      var ageMilli = currentDate - userDob;
+      var minutes = 1000 * 60;
+      var hours = minutes * 60;
+      var days = hours * 24;
+      var years = days * 365;
+      var age = Math.round(ageMilli / years);
+        var category = "";
+        if (age <= 19) {
+          category = "Teen Ager";
+        } else if (age <= 60) {
+          category = "Middle aged";
+        } else {
+          category = "Elder";
+        }
+
       console.log(age);
       return {
-        age,
+        age,category
       };
     }
-
+     
     default:
       return {
         state,

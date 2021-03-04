@@ -1,21 +1,23 @@
+html{
+    scroll-behavior: smooth;
+}
 body{
     font-family: sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    overflow: hidden;
     background-color: white
 }
-.inputOuterContainer {
+ .inputOuterContainer {
     margin:10px;
     margin-top: 10px;
-}
+} 
 .inputInnerContainer{
     margin: 20px;
     margin-top: 60px;
-}
-.input{
+} 
+ .input{
    
     margin:10px;
     outline: none;
@@ -29,10 +31,19 @@ body{
     border-left: black;
     border-right: black;
     background-color: white;
-}
-.calc-btn{
+} 
+ .calc-btn{
     padding: 7px;
     background-color: black;
     color: white;
     border-style: none;
-}
+} 
+h3{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    color: grey;
+    margin-top: 10%;
+    box-shadow:0 3px 6px #e2e2e2;
+} 
+
